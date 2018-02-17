@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         View Button
 // @namespace    view-button
-// @version      0.1
+// @version      0.1.1
 // @description  Returns back "View Image" button for google images
 // @author       coffecode
-// @include      /^https://www.google.(com(.*))/(imgres|search)*
+// @include      /^https://(.*).google.([a-z\.]*)/(imgres|search)*
 // @downloadURL  https://raw.githubusercontent.com/0xC0FFEEC0DE/make-view-button-back-again/master/view-button.user.js
 // @updateURL    https://raw.githubusercontent.com/0xC0FFEEC0DE/make-view-button-back-again/master/view-button.user.js
 // @grant        none
