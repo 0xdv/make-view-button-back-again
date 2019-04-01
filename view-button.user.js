@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         View Button
 // @namespace    view-button
-// @version      0.1.3
+// @version      0.1.4
 // @description  Returns back "View Image" button for google images
 // @author       0xC0FFEEC0DE
 // @include      /^https://(.*).google.([a-z\.]*)/(imgres|search)(.*)
@@ -33,7 +33,7 @@
                 btn.rel = 'noreferrer';
                 btn.appendChild(span);
 
-                let menu = container.querySelector('.irc_ab');
+                let menu = container.querySelector('.irc_ab') || container.querySelector('table.irc_but_r tbody tr');
                 let existBtn = menu.querySelector("."+buttonClass);
                 if(existBtn) {
                     existBtn.parentNode.removeChild(existBtn);
