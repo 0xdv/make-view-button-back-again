@@ -34,8 +34,8 @@
                 btn.rel = 'noreferrer';
                 btn.appendChild(span);
 
-				let fullBtn = document.createElement('td');
-				fullBtn.appendChild(btn)
+		let fullBtn = document.createElement('td');
+		fullBtn.appendChild(btn)
 
                 let menu = container.querySelector('.irc_ab') || container.querySelector('table.irc_but_r tbody tr');
                 let existBtn = menu.querySelector("."+buttonWrapperClass);
