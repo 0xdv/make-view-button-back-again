@@ -15,6 +15,7 @@
     'use strict';
 
     let buttonClass = "view_button";
+	let buttonWrapperClass = "view_button_wrapper";
 
     let imageObserver = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
@@ -33,13 +34,16 @@
                 btn.rel = 'noreferrer';
                 btn.appendChild(span);
 
+				let fullBtn = document.createElement('td');
+				fullBtn.appendChild(btn)
+
                 let menu = container.querySelector('.irc_ab') || container.querySelector('table.irc_but_r tbody tr');
-                let existBtn = menu.querySelector("."+buttonClass);
+                let existBtn = menu.querySelector("."+buttonWrapperClass);
                 if(existBtn) {
                     existBtn.parentNode.removeChild(existBtn);
                 }
 
-                menu.insertBefore(btn, menu.childNodes[1]);
+                menu.insertBefore(fullBtn, menu.childNodes[1]);
             }
         });
     }).observe(document.body, {
