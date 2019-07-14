@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         View Button
 // @namespace    view-button
-// @version      0.1.4
+// @version      0.1.5
 // @description  Returns back "View Image" button for google images
 // @author       0xC0FFEEC0DE
 // @include      /^https://(.*).google.([a-z\.]*)/(imgres|search)(.*)
@@ -14,8 +14,7 @@
 (function() {
     'use strict';
 
-    let buttonClass = "view_button";
-	let buttonWrapperClass = "view_button_wrapper";
+    let buttonWrapperClass = "view_button_wrapper";
 
     let imageObserver = new MutationObserver(function(mutations) {
         mutations.forEach(function(mutation) {
@@ -27,7 +26,7 @@
                 span.textContent = 'View Image';
 
                 let btn = document.createElement('a');
-                btn.className += buttonClass;
+                btn.className += buttonWrapperClass;
                 btn.className += ' NDcgDe dwv50c';
                 btn.target = '_blank';
                 btn.href = mutation.target.src;
