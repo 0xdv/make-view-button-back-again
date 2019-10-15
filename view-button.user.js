@@ -1,10 +1,10 @@
 // ==UserScript==
 // @name         View Button
 // @namespace    view-button
-// @version      0.1.5
+// @version      0.1.6
 // @description  Returns back "View Image" button for google images
 // @author       0xC0FFEEC0DE
-// @include      /^https://(.*).google.([a-z\.]*)/(imgres|search)(.*)
+// @include      /^https://(.*).google.([a-z\.]*)/(imgres|search)(.*)/
 // @downloadURL  https://raw.githubusercontent.com/0xC0FFEEC0DE/make-view-button-back-again/master/view-button.user.js
 // @updateURL    https://raw.githubusercontent.com/0xC0FFEEC0DE/make-view-button-back-again/master/view-button.user.js
 // @grant        none
@@ -31,6 +31,7 @@
                 btn.target = '_blank';
                 btn.href = mutation.target.src;
                 btn.rel = 'noreferrer';
+                btn.style.color = 'white';
                 btn.appendChild(span);
 
 		let fullBtn = document.createElement('td');
