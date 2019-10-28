@@ -34,6 +34,7 @@
                 btn.href = mutation.target.src;
                 btn.rel = 'noreferrer';
                 btn.style.color = 'white';
+                btn.title = 'View Image';
                 btn.appendChild(span);
 
                 let menu = container.querySelector('.irc_ab') || container.querySelector('table.irc_but_r tbody tr');
