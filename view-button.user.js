@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         View Button
 // @namespace    view-button
-// @version      0.1.6
+// @version      0.1.7
 // @description  Returns back "View Image" button for google images
 // @author       0xC0FFEEC0DE
 // @include      /^https://(.*).google.([a-z\.]*)/(imgres|search)(.*)/
