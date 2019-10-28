@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         View Button
 // @namespace    view-button
-// @version      0.1.6
+// @version      0.1.7
 // @description  Returns back "View Image" button for google images
 // @author       0xC0FFEEC0DE
 // @include      /^https://(.*).google.([a-z\.]*)/(imgres|search)(.*)/
@@ -23,7 +23,9 @@
                 let container = mutation.target.closest('.irc_c');
 
                 let span = document.createElement('span');
-                span.textContent = 'View Image';
+                span.style = 'height:20px;line-height:20px;width:20px';
+                span.className = 'aDEWOd z1asCe';
+                span.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><script xmlns=""/><path d="M0 0h24v24H0z" fill="none"/><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7c-2.76 0-5 2.24-5 5s2.24 5 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1zM8 13h8v-2H8v2zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/></svg>'
 
                 let btn = document.createElement('a');
                 btn.className += buttonWrapperClass;
@@ -32,10 +34,8 @@
                 btn.href = mutation.target.src;
                 btn.rel = 'noreferrer';
                 btn.style.color = 'white';
+                btn.title = 'View Image';
                 btn.appendChild(span);
-
-		let fullBtn = document.createElement('td');
-		fullBtn.appendChild(btn)
 
                 let menu = container.querySelector('.irc_ab') || container.querySelector('table.irc_but_r tbody tr');
                 let existBtn = menu.querySelector("."+buttonWrapperClass);
@@ -43,7 +43,7 @@
                     existBtn.parentNode.removeChild(existBtn);
                 }
 
-                menu.insertBefore(fullBtn, menu.childNodes[1]);
+                menu.insertBefore(btn, menu.childNodes[1]);
             }
         });
     }).observe(document.body, {
